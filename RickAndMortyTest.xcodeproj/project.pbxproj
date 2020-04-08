@@ -14,6 +14,7 @@
 		8CED9C54243DD30F004C03C1 /* RickAndMortyTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CED9C52243DD30F004C03C1 /* RickAndMortyTest.xcdatamodeld */; };
 		8CED9C56243DD314004C03C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CED9C55243DD314004C03C1 /* Assets.xcassets */; };
 		8CED9C59243DD314004C03C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CED9C57243DD314004C03C1 /* LaunchScreen.storyboard */; };
+		8CED9C61243E0F22004C03C1 /* ListOfCharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED9C60243E0F22004C03C1 /* ListOfCharactersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8CED9C55243DD314004C03C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CED9C58243DD314004C03C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CED9C5A243DD314004C03C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CED9C60243E0F22004C03C1 /* ListOfCharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCharactersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				8CED9C49243DD30F004C03C1 /* AppDelegate.swift */,
 				8CED9C4B243DD30F004C03C1 /* SceneDelegate.swift */,
 				8CED9C4D243DD30F004C03C1 /* ViewController.swift */,
+				8CED9C60243E0F22004C03C1 /* ListOfCharactersViewController.swift */,
 				8CED9C4F243DD30F004C03C1 /* Main.storyboard */,
 				8CED9C55243DD314004C03C1 /* Assets.xcassets */,
 				8CED9C57243DD314004C03C1 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CED9C54243DD30F004C03C1 /* RickAndMortyTest.xcdatamodeld in Sources */,
+				8CED9C61243E0F22004C03C1 /* ListOfCharactersViewController.swift in Sources */,
 				8CED9C4E243DD30F004C03C1 /* ViewController.swift in Sources */,
 				8CED9C4A243DD30F004C03C1 /* AppDelegate.swift in Sources */,
 				8CED9C4C243DD30F004C03C1 /* SceneDelegate.swift in Sources */,
