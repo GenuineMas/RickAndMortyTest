@@ -19,9 +19,10 @@ struct Character: Codable {
 struct Characters: Codable {
     var results: [Character]
 }
+ var characters = [Character]()
 
 class ListOfCharacters : UITableViewController {
-    var characters = [Character]()
+   
     override func viewDidLoad() {
         func parse(json: Data) {
             let decoder = JSONDecoder()
