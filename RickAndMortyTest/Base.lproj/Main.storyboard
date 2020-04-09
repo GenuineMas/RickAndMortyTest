@@ -64,12 +64,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="r1Z-O5-JpG">
-                        <barButtonItem key="rightBarButtonItem" title="Sort" style="plain" id="sux-n9-ciT">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yVE-oH-eNr" userLabel="Sort">
-                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="MiG-28-fuD">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WcT-qs-FEN">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Sort"/>
+                                <connections>
+                                    <action selector="sortButton:" destination="tvg-Dk-6eh" eventType="touchUpInside" id="MbN-3G-0yR"/>
+                                </connections>
                             </button>
+                            <connections>
+                                <action selector="sortButton:" destination="tvg-Dk-6eh" id="5Bw-No-Tn0"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>

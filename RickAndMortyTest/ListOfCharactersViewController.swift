@@ -22,13 +22,23 @@ struct Characters: Codable {
  var characters = [Character]()
 
 class ListOfCharacters : UITableViewController {
-   
+
+
+
+    @IBAction func sortButton(_ sender: UIBarButtonItem) {
+        characters.sort(by: {$0.name < $1.name})
+                    print(characters)
+                    tableView.reloadData()
+    }
+    
+
+    
     override func viewDidLoad() {
+        
         func parse(json: Data) {
             let decoder = JSONDecoder()
             if let jsonCharacter = try? decoder.decode(Characters.self, from: json) {
                 characters = jsonCharacter.results
-                tableView.reloadData()
             }
         }
         
@@ -51,15 +61,10 @@ class ListOfCharacters : UITableViewController {
         cell.textLabel?.text = characters[indexPath.row].name
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView,didSelectRowAt indexPath: IndexPath) {
-        
-     
-    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
              if (segue.identifier == "detailsSegue") {
                  if let detailsViewController = segue.destination as? DetailsCharacterController {
-                    // detailsViewController.viewWillAppear(true)
                     let indexPathForSelectedRow = tableView.indexPathForSelectedRow?.row
                     detailsViewController.characterImage = characters[indexPathForSelectedRow!].image
                  }
