@@ -10,11 +10,17 @@
 import UIKit
 
 
-struct Character: Codable,Equatable {
+struct Character: Codable {
+
+    
     var id: Int
     var name: String
     var status: String
     var image:String
+    var species:String
+    var gender:String
+    
+    
 }
 
 class ListOfCharacters : UITableViewController,UITableViewDataSourcePrefetching {
@@ -53,7 +59,8 @@ class ListOfCharacters : UITableViewController,UITableViewDataSourcePrefetching 
                 print("No data")
                 return
             }
-
+            
+            
             // Update UI on main thread
             DispatchQueue.main.async {
                 let indexPath = IndexPath(row: index, section: 0)
@@ -94,7 +101,7 @@ class ListOfCharacters : UITableViewController,UITableViewDataSourcePrefetching 
     }
 
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths { 
+        for indexPath in indexPaths {
             self.fetchCharacters(ofIndex: indexPath.row)
         }
     }
@@ -108,7 +115,7 @@ class ListOfCharacters : UITableViewController,UITableViewDataSourcePrefetching 
         if (segue.identifier == "detailsSegue") {
             if let detailsViewController = segue.destination as? DetailsCharacterController {
                 let indexPathForSelectedRow = tableView.indexPathForSelectedRow?.row
-                detailsViewController.characterImage = characters[indexPathForSelectedRow!]!.image
+                detailsViewController.characterDetails = characters[indexPathForSelectedRow!]!
             }
         }
     }
