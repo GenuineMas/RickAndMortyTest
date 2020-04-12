@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C3FDB702443CF980003053C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FDB6F2443CF980003053C /* Model.swift */; };
 		8CB9F78E243E8B9000D060FE /* DetailsCharacterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9F78D243E8B9000D060FE /* DetailsCharacterController.swift */; };
 		8CED9C4A243DD30F004C03C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED9C49243DD30F004C03C1 /* AppDelegate.swift */; };
 		8CED9C4C243DD30F004C03C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED9C4B243DD30F004C03C1 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C3FDB6F2443CF980003053C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8CB9F78D243E8B9000D060FE /* DetailsCharacterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCharacterController.swift; sourceTree = "<group>"; };
 		8CED9C46243DD30F004C03C1 /* RickAndMortyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CED9C49243DD30F004C03C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				8CB9F78D243E8B9000D060FE /* DetailsCharacterController.swift */,
 				8CED9C4D243DD30F004C03C1 /* ViewController.swift */,
 				8CED9C60243E0F22004C03C1 /* ListOfCharactersViewController.swift */,
+				8C3FDB6F2443CF980003053C /* Model.swift */,
 				8CED9C4F243DD30F004C03C1 /* Main.storyboard */,
 				8CED9C55243DD314004C03C1 /* Assets.xcassets */,
 				8CED9C57243DD314004C03C1 /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3FDB702443CF980003053C /* Model.swift in Sources */,
 				8CB9F78E243E8B9000D060FE /* DetailsCharacterController.swift in Sources */,
 				8CED9C54243DD30F004C03C1 /* RickAndMortyTest.xcdatamodeld in Sources */,
 				8CED9C61243E0F22004C03C1 /* ListOfCharactersViewController.swift in Sources */,
