@@ -12,13 +12,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+    
     @IBAction func startButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "listOfCharacters", sender: self)
+        if sender.isFirstResponder {
+        sender.startAnimatingPressActions()
+        }else {
+            print ("No animation")
+        }
+    
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {  [weak self] in  //  to remove retain cycle
+            self?.performSegue(withIdentifier: "listOfCharacters", sender: self)
+        }
     }
     override func viewDidLoad() {
         
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+
 }
 

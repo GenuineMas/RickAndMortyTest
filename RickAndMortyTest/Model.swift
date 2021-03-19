@@ -8,3 +8,16 @@
 
 import Foundation
 
+
+struct Character: Codable {
+
+    
+    var id: Int
+    var name: String
+    var status: String
+    var image:String
+    var species:String
+    var gender:String
+    
+    
+}

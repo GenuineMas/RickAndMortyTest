@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C2BB7F62604B45700A70D73 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2BB7F52604B45700A70D73 /* ViewModel.swift */; };
 		8C3FDB702443CF980003053C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FDB6F2443CF980003053C /* Model.swift */; };
 		8CB9F78E243E8B9000D060FE /* DetailsCharacterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9F78D243E8B9000D060FE /* DetailsCharacterController.swift */; };
 		8CED9C4A243DD30F004C03C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED9C49243DD30F004C03C1 /* AppDelegate.swift */; };
 		8CED9C4C243DD30F004C03C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED9C4B243DD30F004C03C1 /* SceneDelegate.swift */; };
-		8CED9C4E243DD30F004C03C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED9C4D243DD30F004C03C1 /* ViewController.swift */; };
+		8CED9C4E243DD30F004C03C1 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED9C4D243DD30F004C03C1 /* StartViewController.swift */; };
 		8CED9C51243DD30F004C03C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CED9C4F243DD30F004C03C1 /* Main.storyboard */; };
 		8CED9C54243DD30F004C03C1 /* RickAndMortyTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CED9C52243DD30F004C03C1 /* RickAndMortyTest.xcdatamodeld */; };
 		8CED9C56243DD314004C03C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CED9C55243DD314004C03C1 /* Assets.xcassets */; };
@@ -20,12 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C2BB7F52604B45700A70D73 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8C3FDB6F2443CF980003053C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8CB9F78D243E8B9000D060FE /* DetailsCharacterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCharacterController.swift; sourceTree = "<group>"; };
 		8CED9C46243DD30F004C03C1 /* RickAndMortyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CED9C49243DD30F004C03C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CED9C4B243DD30F004C03C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8CED9C4D243DD30F004C03C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8CED9C4D243DD30F004C03C1 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		8CED9C50243DD30F004C03C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8CED9C53243DD30F004C03C1 /* RickAndMortyTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RickAndMortyTest.xcdatamodel; sourceTree = "<group>"; };
 		8CED9C55243DD314004C03C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +47,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C2BB7F32604B42600A70D73 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8CED9C4F243DD30F004C03C1 /* Main.storyboard */,
+				8CB9F78D243E8B9000D060FE /* DetailsCharacterController.swift */,
+				8CED9C4D243DD30F004C03C1 /* StartViewController.swift */,
+				8CED9C60243E0F22004C03C1 /* ListOfCharactersViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8CED9C3D243DD30F004C03C1 = {
 			isa = PBXGroup;
 			children = (
@@ -64,13 +77,11 @@
 		8CED9C48243DD30F004C03C1 /* RickAndMortyTest */ = {
 			isa = PBXGroup;
 			children = (
+				8C2BB7F32604B42600A70D73 /* View */,
+				8C2BB7F52604B45700A70D73 /* ViewModel.swift */,
+				8C3FDB6F2443CF980003053C /* Model.swift */,
 				8CED9C49243DD30F004C03C1 /* AppDelegate.swift */,
 				8CED9C4B243DD30F004C03C1 /* SceneDelegate.swift */,
-				8CB9F78D243E8B9000D060FE /* DetailsCharacterController.swift */,
-				8CED9C4D243DD30F004C03C1 /* ViewController.swift */,
-				8CED9C60243E0F22004C03C1 /* ListOfCharactersViewController.swift */,
-				8C3FDB6F2443CF980003053C /* Model.swift */,
-				8CED9C4F243DD30F004C03C1 /* Main.storyboard */,
 				8CED9C55243DD314004C03C1 /* Assets.xcassets */,
 				8CED9C57243DD314004C03C1 /* LaunchScreen.storyboard */,
 				8CED9C5A243DD314004C03C1 /* Info.plist */,
@@ -106,7 +117,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = Genuine;
 				TargetAttributes = {
 					8CED9C45243DD30F004C03C1 = {
@@ -154,8 +165,9 @@
 				8CB9F78E243E8B9000D060FE /* DetailsCharacterController.swift in Sources */,
 				8CED9C54243DD30F004C03C1 /* RickAndMortyTest.xcdatamodeld in Sources */,
 				8CED9C61243E0F22004C03C1 /* ListOfCharactersViewController.swift in Sources */,
-				8CED9C4E243DD30F004C03C1 /* ViewController.swift in Sources */,
+				8CED9C4E243DD30F004C03C1 /* StartViewController.swift in Sources */,
 				8CED9C4A243DD30F004C03C1 /* AppDelegate.swift in Sources */,
+				8C2BB7F62604B45700A70D73 /* ViewModel.swift in Sources */,
 				8CED9C4C243DD30F004C03C1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,6 +220,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -268,6 +281,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
