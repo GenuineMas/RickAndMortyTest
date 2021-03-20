@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 
 
 class ViewController: UIViewController {
     
+    var characters: [Character] = []
+     let disposeBag = DisposeBag()
     
     
     @IBAction func startButton(_ sender: UIButton) {
@@ -26,8 +30,27 @@ class ViewController: UIViewController {
         }
     }
     override func viewDidLoad() {
-        
+
         super.viewDidLoad()
+        
+        
+        let client = Network.shared
+            do{
+              try client.getCharacters().subscribe(
+                onNext: { result in
+                    self.characters = result.results
+                    print(result.results)
+                   //MARK: display in UITableView
+                },
+                onError: { error in
+                   print(error.localizedDescription)
+                },
+                onCompleted: {
+                   print("Completed event.")
+                }).disposed(by: disposeBag)
+              }
+              catch{
+            }
         // Do any additional setup after loading the view.
     }
 
