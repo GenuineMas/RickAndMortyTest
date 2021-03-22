@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
+
 
 class DetailsCharacterCell: UITableViewCell {
     
@@ -15,6 +19,8 @@ class DetailsCharacterCell: UITableViewCell {
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var detailsImage: UIImageView!
+    
+    
 }
 
 
@@ -46,8 +52,6 @@ class DetailsCharacterController: UITableViewController {
         cell.SpeciesLabel.text = characterDetails?.species
         return cell
     }
-   
-    
 }
 
 

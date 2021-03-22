@@ -8,55 +8,66 @@
 
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 
 
-class ListOfCharacters : UITableViewController,UITableViewDataSourcePrefetching {
+class ListOfCharacters : UITableViewController {
    
     private let viewModelNetwork = Network()
+    var characters: [Character] = []
+     let disposeBag = DisposeBag()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView?.dataSource = self
-        tableView?.prefetchDataSource = self
+        //tableView?.prefetchDataSource = self
+        let client = Network.shared
+            do{
+              try client.getCharacters().subscribe(
+                onNext: { result in
+                    self.characters = result.results
+                    print(result.results)
+                   //MARK: display in UITableView
+                },
+                onError: { error in
+                   print(error.localizedDescription)
+                },
+                onCompleted: {
+                   print("Completed event.")
+                }).disposed(by: disposeBag)
+              }
+              catch{
+            }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
     }
     
     @IBAction func sortButton(_ sender: UIBarButtonItem) {
-        viewModelNetwork.characters.sort(by: {$0?.name ?? "sorting name" < $1?.name ?? "sorting name"})
+        self.characters.sort(by: {$0.name < $1.name })
         tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModelNetwork.characters.count
+        return characters.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        viewModelNetwork.fetchCharacters(ofIndex: indexPath.row)
+        //viewModelNetwork.fetchCharacters(ofIndex: indexPath.row)
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell",for: indexPath)
-        cell.textLabel?.text = viewModelNetwork.characters[indexPath.row]?.name
+        cell.textLabel?.text = characters[indexPath.row].name
         return cell
     }
 
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            viewModelNetwork.fetchCharacters(ofIndex: indexPath.row) 
-        }
-    }
-    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            viewModelNetwork.cancelFetchCharacters(ofIndex: indexPath.row)
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "detailsSegue") {
             if let detailsViewController = segue.destination as? DetailsCharacterController {
                 let indexPathForSelectedRow = tableView.indexPathForSelectedRow?.row
-                detailsViewController.characterDetails = viewModelNetwork.characters[indexPathForSelectedRow!]!
+                detailsViewController.characterDetails = characters[indexPathForSelectedRow!]
             }
         }
     }

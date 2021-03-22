@@ -64,58 +64,14 @@ class Network {
     
     static var shared = Network()
     lazy var requestObservable = RequestObservable(config: .default)
-    var characters = [Character?](repeating: nil, count: 493)
-    let characterID = [Int](1...493)
-    var dataTasks : [URLSessionDataTask] = []
-    
-    
-    func fetchCharacters(ofIndex index: Int) {
-        let ID = characterID[index]
-        let url = URL(string:"https://rickandmortyapi.com/api/character/\(ID)")
-        
-        if dataTasks.firstIndex(where: { task in task.originalRequest?.url == url }) != nil {
-            return
-        }
-        
-        
-        let dataTask = URLSession.shared.dataTask(with:  url!) { data, response, error in
-            if let data = data {
-                print(data)
-                if let jsonCharacter = try? JSONDecoder().decode(Character.self, from: data){
-                    self.characters[index] = jsonCharacter
-                }
-            } else {
-                print("No data")
-                return
-            }
-        }
-        
-        dataTask.resume()
-        dataTasks.append(dataTask)
-    }
+
     
     func getCharacters() throws -> Observable<RawServerResponse> {
         var request = URLRequest(url: URL(string:"https://rickandmortyapi.com/api/character/")!)
         request.httpMethod = "GET"
         return requestObservable.callAPI(request: request)
     }
-    
-    func cancelFetchCharacters(ofIndex index: Int) {
-        let ID = characterID[index]
-        let url = URL(string:"https://rickandmortyapi.com/api/character/\(ID)")
-        guard let dataTaskIndex = dataTasks.firstIndex(where: { task in
-            task.originalRequest?.url == url
-        }) else {
-            return
-        }
-        
-        let dataTask =  dataTasks[dataTaskIndex]
-        dataTask.cancel()
-        dataTasks.remove(at: dataTaskIndex)
-    }
-    
 }
-
 
 
 extension UIImageView {
